@@ -5,13 +5,21 @@ import ee.sda.patterns.creational.abstractfactory.model.Window;
 
 public abstract class WidgetFactory {
     public abstract Window createWindow();
+
     public abstract ScrollBar createScrollBar();
 
-    public static WidgetFactory getInstance (String osName) {
+    // overloading demonstrated
+    public static WidgetFactory getInstance() {
+        String osName = System.getProperty("os.name");
+        return getInstance(osName);
+    }
+
+
+    public static WidgetFactory getInstance(String osName) {
         // define our variables
         WidgetFactory widgetFactory;
 
-        if (osName.startsWith("Windows")){
+        if (osName.startsWith("Windows")) {
             widgetFactory = new WindowsWidgetFactory();
         } else if (osName.startsWith("Mac OS")) {
             widgetFactory = new MacOSWidgetFactory();

@@ -8,10 +8,8 @@ public class Client {
 
 
     public static void main(String[] args) {
-        String osName = System.getProperty("os.name");
-        System.out.println("osName = " + osName);
 
-        WidgetFactory widgetFactory = WidgetFactory.getInstance(osName);
+        WidgetFactory widgetFactory = WidgetFactory.getInstance();
 
         ScrollBar scrollBar = widgetFactory.createScrollBar();
         Window window = widgetFactory.createWindow();
