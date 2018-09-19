@@ -1,10 +1,16 @@
 package ee.sda.patterns.creational.builder;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 public class Person {
 
     private String firstName;
     private String lastName;
     private int age;
+    private List <String> friends;
 
 
     // default constructor now being private.
@@ -34,6 +40,7 @@ public class Person {
         private String firstName;
         private String lastName;
         private int age;
+        private List<String> friends = new ArrayList<String>();
 
 
         // create setters for these properties.
@@ -53,6 +60,23 @@ public class Person {
         }
 
 
+        public Builder addFriend(String friend){
+            this.friends.add(friend);
+            return this;
+        }
+
+        // adding all the friends at once
+        public Builder addFriends(Collection<String> friends){
+            this.friends.addAll(friends);
+            return this;
+        }
+
+        // adding all the friends at once variant
+        public Builder addFriends(String... friends){
+            this.friends.addAll(Arrays.asList(friends));
+            return this;
+        }
+
         // return instance of a person
         public Person build() {
             // how the person should be created
@@ -60,6 +84,7 @@ public class Person {
             person.lastName = this.lastName;
             person.firstName = this.firstName;
             person.age = this.age;
+            person.friends = this.friends;
             return person;
         }
 
