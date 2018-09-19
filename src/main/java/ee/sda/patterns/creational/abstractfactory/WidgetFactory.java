@@ -15,6 +15,7 @@ public abstract class WidgetFactory {
     }
 
 
+    // This corresponds to "Factory Method"
     public static WidgetFactory getInstance(String osName) {
         // define our variables
         WidgetFactory widgetFactory;
