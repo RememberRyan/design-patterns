@@ -11,18 +11,7 @@ public class Client {
         String osName = System.getProperty("os.name");
         System.out.println("osName = " + osName);
 
-        // define our variables
-        WidgetFactory widgetFactory;
-
-        if (osName.startsWith("Windows")){
-            widgetFactory = new WindowsWidgetFactory();
-        } else if (osName.startsWith("Mac OS")) {
-            widgetFactory = new MacOSWidgetFactory();
-        } else {
-        // because we dont have  3rd alternative. So by default, MacOS is chosen ie. if you have Linux OS
-            widgetFactory = new MacOSWidgetFactory();
-        }
-
+        WidgetFactory widgetFactory = WidgetFactory.getInstance(osName);
 
         ScrollBar scrollBar = widgetFactory.createScrollBar();
         Window window = widgetFactory.createWindow();
