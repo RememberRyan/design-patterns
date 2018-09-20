@@ -1,13 +1,6 @@
 package ee.sda.patterns.structural.adapter;
 
-public class CirclePug {
-    private int radius;
+public interface CirclePug {
 
-    public CirclePug(int radius) {
-        this.radius = radius;
-    }
-
-    public int getRadius() {
-        return radius;
-    }
+    int getRadius();
 }

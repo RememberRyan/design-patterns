@@ -1,7 +1,7 @@
 package ee.sda.patterns.structural.adapter;
 
 public class SquarePug {
-    private int sideLength:
+    private int sideLength;
 
     public SquarePug(int sideLength) {
         this.sideLength = sideLength;
