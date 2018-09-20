@@ -9,11 +9,7 @@ public class CircleHole {
     }
 
     public boolean take(CirclePug circlePug) {
-        if (circlePug.getRadius() <= this.radius) {
-            return true;
-        } else {
-            return false;
-        }
+        return circlePug.getRadius() <= this.radius;
     }
 
 
