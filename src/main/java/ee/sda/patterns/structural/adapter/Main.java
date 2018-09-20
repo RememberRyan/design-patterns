@@ -10,5 +10,10 @@ public class Main {
         System.out.println(circleHole.take(circlePug50));
         System.out.println(circleHole.take(circlePug100));
         System.out.println(circleHole.take(circlePug25));
+
+        SquarePug squarePug = new SquarePug(50);
+
+        // only takes instances of circlePug so we need an adaptor
+        circleHole.take(squarePug);
     }
 }
