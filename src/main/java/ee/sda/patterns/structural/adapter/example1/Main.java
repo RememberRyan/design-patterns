@@ -17,7 +17,7 @@ public class Main {
         System.out.println(result1);
 
         SquarePug squarePug1000 = new SquarePug(1000);
-        boolean result2 = circleHole.take(new SquareToBasicCircleAdapter(squarePug));
+        boolean result2 = circleHole.take(new SquareToBasicCircleAdapter(squarePug1000));
         System.out.println(result2);
     }
 }

@@ -11,7 +11,7 @@ public class SquareToBasicCircleAdapter implements CirclePug {
     @Override
     public int getRadius() {
 
-        // pythagarous theorm - cast to Integer, after decimal removed using Math.floor
+        // pythagoras's theorem - cast to Integer, after decimal removed using Math.floor
         return (int) Math.floor((squarePug.getSideLength() * Math.sqrt(2)) /2);
     }
 
