@@ -24,6 +24,7 @@ public class BookInfoFacade {
         this.bookDao = bookDao;
     }
 
+    // TODO: simplify this implementation
     public Optional<BookInfo> getByName(String bookName) {
         Optional<Book> book = bookDao.findByName(bookName);
         if (book.isPresent()) {
