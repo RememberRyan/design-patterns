@@ -1,5 +1,6 @@
 package ee.sda.patterns.structural.adapter.example2;
 
+// This should be replaced with BetterSingleClickHandler
 public class ActualSingleClickHandler implements ClickHandler {
 
     @Override
