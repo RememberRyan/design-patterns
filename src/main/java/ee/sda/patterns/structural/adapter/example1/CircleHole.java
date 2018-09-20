@@ -1,4 +1,4 @@
-package ee.sda.patterns.structural.adapter;
+package ee.sda.patterns.structural.adapter.example1;
 
 public class CircleHole {
 
