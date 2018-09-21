@@ -22,6 +22,7 @@ public class Main {
         headers.put("Accept", "application/json");
         headers.put("Authorization", "Bearer 133314124");
 
-        auditLogRequestFilter.handle(new Request(url,headers));
+        Request request = new Request(url, headers);
+        auditLogRequestFilter.handle(request);
     }
 }
