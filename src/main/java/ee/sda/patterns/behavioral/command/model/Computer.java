@@ -13,7 +13,12 @@ public class Computer {
         return true;
     }
 
+    public ComputerState getState() {
+        return state;
+    }
+
     public boolean powerOff(){
+
         this.state = ComputerState.OFF;
         return true;
     }
