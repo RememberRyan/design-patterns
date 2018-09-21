@@ -11,18 +11,26 @@ public class AuthenticationRequestFilter implements RequestFilter {
 
     @Override
     public void handle(Request request) {
-        String authorization = request.getHeaders().get(AUTHORIZATION_HEADER);
-        // merging previous two if statements, further refactoring
-        if (authorization != null
-            &&
-            // remove magic string by extracting it to a constant, also
-             authorization.equals(VALID_AUTHORIZATION_VALUE)) {
-                if (nextFilter != null) {
-                    nextFilter.handle(request);
-                }
-            }
+        validateAuthorizationHeader(request);
+        continueToNextIfNecessary(request);
+    }
 
-        throw new UnsupportedOperationException("request is missing correct authorization header");
+    private void validateAuthorizationHeader(Request request) {
+        String authorization = request.getHeaders().get(AUTHORIZATION_HEADER);
+        if (isCorrect(authorization)) {
+            throw new UnsupportedOperationException("request is missing correct authorization header");
+        }
+    }
+
+    private boolean isCorrect(String authorization) {
+        return authorization == null
+                || !authorization.equals(VALID_AUTHORIZATION_VALUE);
+    }
+
+    private void continueToNextIfNecessary(Request request) {
+        if (nextFilter != null) {
+            nextFilter.handle(request);
+        }
     }
 
     @Override
